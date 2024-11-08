@@ -25,7 +25,7 @@ body{
     --onHoverColor: #000;
 
     /* background: linear-gradient(var(--color-7),var(--color-6),var(--color-5),var(--color-4),var(--color-3)); */
-    background: linear-gradient(65deg,var(--background3),var(--background2),var(--background1),var(--background1));
+    background: linear-gradient(65deg,var(--background3),var(--background2),var(--background1));
     height: max-content;
     min-height: 100vh;
 }
