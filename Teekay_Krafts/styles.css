@@ -19,13 +19,13 @@ body{
     --background2: #16a085;
     --background3: #b34404;
 
-    --elementBackground-1: #017e2b3a;
+    --elementBackground-1: #017e2b23;
     --borderColor: gray;
     --btnBackground: burlywood;
     --onHoverColor: #000;
 
     /* background: linear-gradient(var(--color-7),var(--color-6),var(--color-5),var(--color-4),var(--color-3)); */
-    background: linear-gradient(65deg,var(--background3),var(--background2),var(--background1));
+    background: linear-gradient(65deg,var(--background3),var(--background1),var(--background2),var(--background3),var(--background1));
     height: max-content;
     min-height: 100vh;
 }
@@ -264,6 +264,10 @@ body{
     border-radius: 4%;
     font-size: 1.2em;
     padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .service h3{
     text-align: center;
@@ -271,14 +275,16 @@ body{
     font-size: 1.4em;
 }
 .service img{
-    width: 80%;
+    max-width: 90%;
+    min-width: 60%;
     margin: auto;
-
+    max-height: 40vh;
+    min-height: 25vh;
 
     object-fit: cover;
     object-position: center;
-    mask-image: linear-gradient(#000,#000,transparent);
-    -webkit-mask-image: linear-gradient(#000, #000, transparent);
+    mask-image: linear-gradient(transparent,#000,#000,transparent);
+    -webkit-mask-image: linear-gradient(transparent,#000, #000, transparent);
 }
 
 
@@ -315,7 +321,7 @@ body{
     max-width: 40%;
     min-width: 25%;
     height: auto;
-    max-height: 60vh;
+    max-height: 30vh;
 
     mask-image: linear-gradient(transparent,#000,#000,transparent);
     -webkit-mask-image: linear-gradient(transparent,#000, #000, transparent);
