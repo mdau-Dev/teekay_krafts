@@ -177,6 +177,8 @@ body{
     box-shadow: 1px 1px 6px 10px;
     object-fit: cover;
     object-position: bottom;
+
+    mix-blend-mode: multiply;
 }
 
 .callToActionButton{
