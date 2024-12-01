@@ -3,38 +3,96 @@
     padding: 0;
     box-sizing: border-box;
     font-family: consolas;
-    color: #ffffff;
+    color: bisque;
     line-height: 1.5;
 }
 body{
     /* --color-1: #c38eb4;
     --color-2: #e1cbd7;
     --color-3: #86abcf; */
-    --color-4: #26425a;
-    --color-5: #022442;
+    --color-callToAction: beige;
+    --color-4: #dba4f7;
+    /* --color-4: #26425a; */
+    --color-5: #0a72ce;
     --color-6: #044f5c;
     --color-7: #013a44;
 
-    --background1: #fd9f68;
-    --background2: #16a085;
-    --background3: #b34404;
+    /* --background1: #fd9f68; */
+    --background1: #4a235a;
+    /* --background2: #16a085; */
+    --background2: #6c3483;
+    /* --background3: #000; */
+    --background3: #d494f5;
+    /* --background1: #fd9f68; */
 
     --elementBackground-1: #017e2b23;
+    /* --elementBackground-1: transparent; */
     --borderColor: gray;
     --btnBackground: burlywood;
     --onHoverColor: #000;
 
     /* background: linear-gradient(var(--color-7),var(--color-6),var(--color-5),var(--color-4),var(--color-3)); */
-    background: linear-gradient(65deg,var(--background3),var(--background1),var(--background2),var(--background3),var(--background1));
-    height: max-content;
+    background: linear-gradient(95deg,var(--background2),var(--background1),var(--background2),var(--background3),var(--background1));
     min-height: 100vh;
 }
 
 .generalWrapper{
+    display: block;
     width: 100%;
 
     min-height: 100vh;
 }
+
+.animateEntryToSite{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* z-index: 99; */
+    /* background: linear-gradient(95deg, var(--background2),
+     var(--background1), var(--background2), var(--background3), 
+     var(--background1)); */
+    background-color: var(--background1);
+    transition: .5s all;
+    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+    letter-spacing: 7px;
+    text-decoration: dashed;
+}
+
+.animateEntryToSite span {
+    transform: scaleY(0px);
+    transition: .5s all;
+    animation: loaderAnimation 5s ease-in-out infinite;
+}
+@keyframes loaderAnimation{
+    to{
+    transform: scaleY(50px);
+    }
+}
+
+.animateEntryToSite span:nth-child(1){
+    animation-delay: 200ms;
+}
+.animateEntryToSite span:nth-child(2) {
+    animation-delay: 400ms;
+}
+.animateEntryToSite span:nth-child(3) {
+    animation-delay: 600ms;
+}
+.animateEntryToSite span:nth-child(4) {
+    animation-delay: 800ms;
+}
+.animateEntryToSite span:nth-child(5) {
+    animation-delay: 1000ms;
+}
+
 
 
 
@@ -129,16 +187,13 @@ body{
     background: var(--elementBackground-1);
 }
 .landingContent .first{
-    /* width: 40%;
-    margin: auto; */
-    width: 60%;
+    width: 55%;
     border-top-right-radius: 260%;
-    border-bottom-right-radius: 100%;
-    /* border-bottom-left-radius: 10%; */
+    border-bottom-right-radius: 100%; 
     text-align: start;
-    border-top: .1px solid #fff;
-    border-bottom: .1px solid #fff;
 
+    border: .1px solid gray;
+    border-right: 0px solid gray;
 }
  .second{
     /* border-top-left-radius: 170%;
@@ -149,17 +204,17 @@ body{
 }
 
 .landingContent h2{
-    font-size: 3em;
+    font-size: 2.5em;
     color: var(--color-4);
 }
 .landingContent h4{
-    font-size: 1.7em;
-}
-.landingContent h3{
     font-size: 1.5em;
 }
-.landingContent h5{
+.landingContent h3{
     font-size: 1.2em;
+}
+.landingContent h5{
+    font-size: 1.1em;
 }
 
 
@@ -170,11 +225,11 @@ body{
     max-height: 60vh;
 }
 .imageRep img{
-    width: 100%;
-    max-height: 50%;
+    max-width: 100%;
+    max-height: 70vh;
     margin-top: 40px;
-    color: var(--background3);
-    box-shadow: 1px 1px 6px 10px;
+    /* color: var(--background3);
+    box-shadow: 1px 1px 6px 10px; */
     object-fit: cover;
     object-position: bottom;
 
@@ -198,38 +253,43 @@ body{
     
 }
 .callToActionButton .ctaBtn{
-    background: var(--color-4);
-    color: var(--color-2);
-    border-radius: 8px;
+    text-transform: uppercase;
+    background: #000;
+    color: var(--color-callToAction);
+    border-radius: 6px;
     padding: 7px;
-    width: 40%;
+    width: 25%;
     margin: auto;
-    font-size: 2em;
+    font-size: 1.2em;
     cursor: pointer;
     transition: all 1s;
 
-    border-image-slice: .5;
-    border-image-source: linear-gradient( 90deg,#bbb, #fff,#aaa);
+    /* border-image-slice: 1;
+    border-image-source: linear-gradient(25deg, var(--background1), #fff,var(--background3));
 
-    animation: borderShine 10s ease infinite;
+    animation: borderShine 3s ease infinite; */
+    border: .1px solid gray;
+
     overflow: hidden;
 }
 @keyframes borderShine{
     25%{
-    border-image-source: linear-gradient(90deg, #fff, #aaa,#fff);
+    /* border-image-source: linear-gradient(40deg,var(--elementBackground-1), var(--background2),chartreuse); */
+    border-image-source: linear-gradient(40deg, #b008f3, var(--background2), chartreuse);
     }
     50%{
-    border-image-source: linear-gradient( #fff);
+    border-image-source: linear-gradient(40deg,var(--elementBackground-1), chartreuse, #a405e2);
     }
 }
 .ctaBtn:hover{
-    background: var(--btnBackground);
+    background: transparent;
     color: var(--onHoverColor);
 }
 
 
 
 .servicesSection{
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -239,7 +299,7 @@ body{
     margin: auto;
 
     border-top: .1px solid var(--borderColor);
-    background: var(--elementBackground-1);
+    /* background: var(--elementBackground-1); */
 }
 .servicesSection h2{
     font-size: 2.2em;
@@ -270,6 +330,12 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    border-image-slice: 1; 
+    border-image-source: linear-gradient( var(--background1), chartreuse,var(--background3));
+
+    animation: borderShine 3s ease infinite;
+    overflow: hidden;
 }
 .service h3{
     text-align: center;
@@ -293,6 +359,7 @@ body{
 
 
 .portfolioSection{
+    position: relative;
     padding: 20px;
     width: 100%;
     border-top: .1px solid var(--borderColor);
@@ -356,6 +423,7 @@ body{
 
 
 .testimonialSection{
+    position: relative;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -457,6 +525,7 @@ body{
 
 
 .footerWrapper{
+    position: relative;
     border-top: .1px solid var(--borderColor);
     background: #0000003a;
     padding: 60px;
@@ -514,6 +583,7 @@ body{
 
 
 .copyrights{
+    position: relative;
     color: var(--color-5);
     width: 100%;
     display: flex;
